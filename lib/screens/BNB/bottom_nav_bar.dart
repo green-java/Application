@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/components/app_color.dart';
 import 'package:untitled/screens/home_page/home_page.dart';
+import 'package:untitled/screens/item_detail_page/item_detail_page.dart';
+import 'package:untitled/screens/notification/notification.dart';
 import 'package:untitled/screens/start_page/start_page.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -29,11 +31,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
       case 0:
         return homePage();
       case 1:
-        return homePage();
+        return ItemDetailPage();
       case 2:
-        return homePage();
+        return ItemDetailPage();
       case 3:
-        return homePage();
+        return NotificationPage();
       default:
         return homePage();
     }

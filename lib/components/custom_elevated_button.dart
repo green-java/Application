@@ -11,12 +11,13 @@ class custom_elevated_button extends StatelessWidget {
   String text;
   // Color? bgColor;
   Color? foregroundColor;
+  Color? backgroundColor;
   double? fontSize;
   double? elevation;
   Color? bgColor;
   FontWeight? fontWeight;
   Color? borderColor;
-  Icon? suffixIcon;
+  Widget? suffixIcon;
   bool? isLoading;
   double? borderRadius;
   TextAlign? textAlign;
@@ -30,6 +31,7 @@ class custom_elevated_button extends StatelessWidget {
     this.elevation,
     this.onPressed,
     this.borderRadius,
+    this.backgroundColor,
      this.height,
     required this.text,
      this.fontWeight,
@@ -47,17 +49,20 @@ class custom_elevated_button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
+    return SizedBox(
       width: width,
       height: height ?? 40,
+
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          elevation: elevation,
-          backgroundColor: bgColor ?? Colors.orange,
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 10,vertical: 0),),
+          backgroundColor: MaterialStateProperty.all(backgroundColor ?? Colors.white),
+          elevation: MaterialStateProperty.all(elevation ?? 0),
           alignment: Alignment.center,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius!)
-          )
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            side: BorderSide(color: borderColor ?? Colors.white,width: 1),
+            borderRadius: BorderRadius.circular(borderRadius ?? 0)
+          ),),
         ),
 
         onPressed: onPressed,
@@ -68,9 +73,9 @@ class custom_elevated_button extends StatelessWidget {
         Row(
           children: [
             if(suffixIcon!=null)
-             {
-                Icon(suffixIcon!),
-             },
+              ...[
+                suffixIcon!
+              ],
             Text(
               text,
               style: TextStyle(

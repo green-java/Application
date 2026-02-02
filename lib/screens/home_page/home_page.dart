@@ -28,13 +28,13 @@ class _homePageState extends State<homePage> {
   var dropdownvalue = 'change_location';
   TextEditingController search_controller = TextEditingController();
 
-  final urlImages = ['assets/images/coffee.png', 'assets/images/banner.png'];
+  final urlImages = ['assets/images/banner.png', 'assets/images/coffee.png'];
   final cafeItem = ['All Coffee', 'capacino', 'Machiato', 'Latte', 'America'];
 
   List<CafeModel?> items = [
     CafeModel(imageAs: 'assets/images/cafe.png', title: 'Cafe Mocha', subtitle: 'Deep Foam', price:'4.56'),
-    CafeModel(imageAs: 'assets/images/cafe.png', title: 'Cafe Mocha', subtitle: 'Deep Foam', price:'4.56'),
-    CafeModel(imageAs: 'assets/images/cafe.png', title: 'Cafe Mocha', subtitle: 'Deep Foam', price:'4.56'),
+    CafeModel(imageAs: 'assets/images/cafe2.jpeg', title: 'Cafe Cream ', subtitle: 'Ice cocoa ', price:'5.01'),
+    CafeModel(imageAs: 'assets/images/cafe.png', title: 'Creamy Mocha', subtitle: 'Ice creamy', price:'4.56'),
     CafeModel(imageAs: 'assets/images/cafe.png', title: 'Flat White', subtitle: 'Expresso', price:'5.51')
   ];
 
@@ -123,7 +123,7 @@ class _homePageState extends State<homePage> {
                       height: carouselHeight,
                       autoPlay: true,
                       reverse: true,
-                      autoPlayInterval: Duration(seconds: 3),
+                      autoPlayInterval: Duration(seconds:2 ),
                     ),
                     itemCount: urlImages.length,
                     itemBuilder:
@@ -174,6 +174,7 @@ class _homePageState extends State<homePage> {
                                 ? Appcolors.white
                                 : Appcolors.lightBlack,
                             fontSize: 16,
+                            fontWeight: FontWeight.bold
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -192,7 +193,7 @@ class _homePageState extends State<homePage> {
               child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 0.65,
-                      mainAxisSpacing: 2,
+                      mainAxisSpacing: 0,
                       // crossAxisSpacing: 2,
                       crossAxisCount: 2),
 
@@ -286,7 +287,7 @@ class _homePageState extends State<homePage> {
         padding: EdgeInsets.symmetric(horizontal: 12,vertical: 12),
         decoration: BoxDecoration(
           color: Appcolors.lightWhite,
-          // border: Border.all(color: Colors.black),
+          border: Border.all(color: Colors.grey.shade300),
           borderRadius: BorderRadius.circular(20)
         ),
         child: Column(

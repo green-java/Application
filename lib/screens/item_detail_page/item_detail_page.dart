@@ -36,7 +36,8 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
-            child: IconButton(icon: Icon(isFav ? Icons.favorite : Icons.favorite_outline, size: 25, color: isFav ? Colors.red : Colors.black),
+            child: IconButton(icon: Icon(isFav ? Icons.favorite :
+            Icons.favorite_outline, size: 25, color: isFav ? Colors.red : Colors.black),
               onPressed: () {
                   setState(()
                   {
@@ -57,12 +58,12 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
               //image container
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 190,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    'assets/images/banner.png',
-                    fit: BoxFit.cover,
+                    AppConstants.cafeDetail,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
@@ -76,7 +77,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                     children: [
                       SizedBox(height: 10),
                       Text(
-                        'data',
+                        'Caffe Mocha',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -85,7 +86,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                       ),
                       // SizedBox(height: 5,),
                       Text(
-                        'subdata',
+                        'Ice/Hot',
                         style: TextStyle(
                           color: Colors.grey,
                           fontWeight: FontWeight.normal,
@@ -142,7 +143,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                           borderRadius: BorderRadius.circular(7),
                           color: Color(0xfff5f5f5),
                         ),
-                        child: Image.asset(AppConstants.bike, fit: BoxFit.cover),
+                        child: Image.asset(AppConstants.bean, fit: BoxFit.cover),
                       ),
                       Container(
                         padding: EdgeInsets.all(5),
@@ -152,7 +153,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                           borderRadius: BorderRadius.circular(7),
                           color: Color(0xfff5f5f5),
                         ),
-                        child: Image.asset(AppConstants.bike, fit: BoxFit.cover),
+                        child: Image.asset(AppConstants.milk, fit: BoxFit.cover),
                       ),
                     ],
                   ),
@@ -175,8 +176,9 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                   SizedBox(height: 5),
                   SingleChildScrollView(
                     child: ReadMoreText(
-                      'Your long description text goes here..Your long description text goes here..Your long description text goes here..Your long description text goes here..Your long description text goes here..Your '
-                      'long description text goes here..Your long description text goes here...',
+                     'A caffè mocha is a rich, chocolate-infused coffee drink made with espresso, steamed milk, and chocolate syrup or cocoa powder, '
+                         'topped with milk foam or whipped cream, creating a sweet, indulgent, and velvety blend of bold coffee and decadent'
+                         ' chocolate, served hot or iced',
                       trimLines: 3,
                       trimMode: TrimMode.Line,
                       trimCollapsedText: ' Read More',
@@ -247,7 +249,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
         width: double.infinity,
         height: 110,
         decoration: BoxDecoration(
-          color: Appcolors.white,
+          color: Color(0xffffffff),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),

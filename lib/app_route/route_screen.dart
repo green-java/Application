@@ -4,6 +4,8 @@ import 'package:untitled/components/app_bar.dart';
 import 'package:untitled/screens/BNB/bottom_nav_bar.dart';
 import 'package:untitled/screens/home_page/home_page.dart';
 import 'package:untitled/screens/item_detail_page/item_detail_page.dart';
+import 'package:untitled/screens/sample/LocationPage.dart';
+import '../screens/notification/notification.dart';
 import '../screens/start_page/start_page.dart';
 
 class AppScreen {
@@ -11,6 +13,7 @@ class AppScreen {
     GetPage(name: Routes.start, page: () => StartPage()),
     GetPage(name: Routes.home, page: () => homePage()),
     GetPage(name: Routes.BNB, page: ()=>BottomNavBar()),
-    GetPage(name: Routes.itemDetails, page: ()=>ItemDetailPage())
+    GetPage(name: Routes.itemDetails, page: ()=>ItemDetailPage()),
+    GetPage(name: Routes.notification, page:()=>NotificationPage())
   ];
 }
